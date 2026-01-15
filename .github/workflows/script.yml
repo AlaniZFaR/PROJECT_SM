@@ -141,10 +141,10 @@ jobs:
               "max_retries": 2
             },
             {
-              "task_key": "Ingest dep_aisle data",
+              "task_key": "Ingest_dep_aisle_data",
               "description": "Ejecuta notebook Ingest dep_aisle data con parámetros",
               "notebook_task": {
-                "notebook_path": "/db_project/Ingest dep_aisle data",
+                "notebook_path": "/db_project/Ingest_dep_aisle_data",
                 "source": "WORKSPACE",
                 "base_parameters": {
                   "inputPath": "/data/input",
@@ -162,10 +162,10 @@ jobs:
               ]
             },
             {
-              "task_key": "Ingest products_orders data",
+              "task_key": "Ingest_products_orders_data",
               "description": "Ejecuta notebook Ingest products_orders data con parámetros",
               "notebook_task": {
-                "notebook_path": "/db_project/Ingest products_orders data",
+                "notebook_path": "/db_project/Ingest_products_orders_data",
                 "source": "WORKSPACE",
                 "base_parameters": {
                   "inputPath": "/data/input",
@@ -199,10 +199,10 @@ jobs:
               "max_retries": 2,
               "depends_on": [
                 {
-                  "task_key": "Ingest products_orders data"
+                  "task_key": "Ingest_products_orders_data"
                 },
                 {
-                  "task_key": "Ingest dep_aisle data"
+                  "task_key": "Ingest_dep_aisle_data"
                 }
               ]
             },
@@ -210,7 +210,7 @@ jobs:
               "task_key": "Load",
               "description": "Ejecuta notebook Load con parámetros",
               "notebook_task": {
-                "notebook_path": "/db_project/Load data",
+                "notebook_path": "/db_project/Load",
                 "source": "WORKSPACE",
                 "base_parameters": {
                   "inputPath": "/data/input",
