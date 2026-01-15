@@ -133,7 +133,7 @@ jobs:
                 "notebook_path": "/db_project/Preparacion_Ambiente",
                 "source": "WORKSPACE",
                 "base_parameters": {
-                  "storageLocation": "storage"
+                  "storageName": "adlsprojectsm"
                 }
               },
               "existing_cluster_id": "$CLUSTER_ID",
@@ -147,9 +147,10 @@ jobs:
                 "notebook_path": "/db_project/Ingest_dep_aisle_data",
                 "source": "WORKSPACE",
                 "base_parameters": {
-                  "inputPath": "/data/input",
-                  "outputPath": "/data/output",
-                  "processDate": "$(date +%Y-%m-%d)"
+                  "catalogo": "catalog_dev",
+                  "container": "raw",
+                  "esquema: "bronze",
+                  "storage-name: "adlsprojectsm"
                 }
               },
               "existing_cluster_id": "$CLUSTER_ID",
@@ -168,9 +169,10 @@ jobs:
                 "notebook_path": "/db_project/Ingest_products_orders_data",
                 "source": "WORKSPACE",
                 "base_parameters": {
-                  "inputPath": "/data/input",
-                  "outputPath": "/data/output",
-                  "processDate": "$(date +%Y-%m-%d)"
+                  "catalogo": "catalog_dev",
+                  "container": "raw",
+                  "esquema: "bronze",
+                  "storage-name: "adlsprojectsm"
                 }
               },
               "existing_cluster_id": "$CLUSTER_ID",
@@ -189,9 +191,9 @@ jobs:
                 "notebook_path": "/db_project/Transform",
                 "source": "WORKSPACE",
                 "base_parameters": {
-                  "inputPath": "/data/input",
-                  "outputPath": "/data/output",
-                  "processDate": "$(date +%Y-%m-%d)"
+                  "catalogo": "catalog_dev",
+                  "esquema_sink": "silver",
+                  "esquema_source": "bronze"
                 }
               },
               "existing_cluster_id": "$CLUSTER_ID",
@@ -213,9 +215,9 @@ jobs:
                 "notebook_path": "/db_project/Load",
                 "source": "WORKSPACE",
                 "base_parameters": {
-                  "inputPath": "/data/input",
-                  "outputPath": "/data/output",
-                  "processDate": "$(date +%Y-%m-%d)"
+                  "catalogo": "catalog_dev",
+                  "esquema_sink": "golden",
+                  "esquema_source": "silver"
                 }
               },
               "existing_cluster_id": "$CLUSTER_ID",
