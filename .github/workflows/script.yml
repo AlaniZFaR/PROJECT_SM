@@ -18,7 +18,7 @@ jobs:
         ORIGIN_HOST=${{ secrets.DATABRICKS_ORIGIN_HOST }}
         ORIGIN_TOKEN=${{ secrets.DATABRICKS_ORIGIN_TOKEN }}
         NOTEBOOK_BASE="/Workspace/PROJECT_SM_GITHUB/ETL"
-        NOTEBOOKS=("Ingest dep_aisle data" "Ingest products_orders data" "Load" "Preparacion_Ambiente" "Transform")  # Agrega más según necesitesas
+        NOTEBOOKS=("Ingest_dep_aisle_data" "Ingest_products_orders_data" "Load" "Preparacion_Ambiente" "Transform")  # Agrega más según necesitesas
         mkdir -p notebooks_to_deploy
         for nb in "${NOTEBOOKS[@]}"; do
           echo "Exportando $nb en modo raw..."
