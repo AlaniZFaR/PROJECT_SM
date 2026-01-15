@@ -149,8 +149,8 @@ jobs:
                 "base_parameters": {
                   "catalogo": "catalog_dev",
                   "container": "raw",
-                  "esquema: "bronze",
-                  "storage-name: "adlsprojectsm"
+                  "esquema": "bronze",
+                  "storage-name": "adlsprojectsm"
                 }
               },
               "existing_cluster_id": "$CLUSTER_ID",
@@ -171,8 +171,8 @@ jobs:
                 "base_parameters": {
                   "catalogo": "catalog_dev",
                   "container": "raw",
-                  "esquema: "bronze",
-                  "storage-name: "adlsprojectsm"
+                  "esquema": "bronze",
+                  "storage-name": "adlsprojectsm"
                 }
               },
               "existing_cluster_id": "$CLUSTER_ID",
